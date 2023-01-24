@@ -86,6 +86,7 @@ body {
   padding-top: 10px;
   color: black;
   justify-content: space-around;
+  overflow: auto;
 }
 
 #bottom {
@@ -126,25 +127,44 @@ a {
 
 #departure {
   height: 30px;
-  width: 90%; 
-  border-radius: 10px; 
+  width: 90%;
+  border-radius: 10px;
 }
 
 #arrival {
   height: 30px;
-  width: 90%; 
-  border-radius: 10px; 
+  width: 90%;
+  border-radius: 10px;
 }
 
 #date {
   height: 30px;
   width: 90%;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 #register {
   height: 40px;
   width: 60%;
   background-color: rgb(22, 244, 214);
-  border-radius: 20px; 
+  border-radius: 20px;
 }
 
+.trainList {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  background-color: antiquewhite;
+  font-size: small;
+}
+
+.book-button {
+  height: 30px;
+  width: 20%;
+  background-color: rgb(22, 244, 214);
+  border-radius: 10px;
+}
