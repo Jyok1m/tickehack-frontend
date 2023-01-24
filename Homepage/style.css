@@ -72,7 +72,7 @@ body {
   align-items: center;
   border-radius: 10px;
   width: 300px;
-  height: 500px;
+  height: 400px;
   background-color: aliceblue;
   margin: 100px;
 }
@@ -80,7 +80,7 @@ body {
 #result {
   background-color: aliceblue;
   width: 300px;
-  height: 500px;
+  height: 400px;
   margin: 100px;
   border-radius: 10px;
   padding-top: 10px;
@@ -123,3 +123,28 @@ a {
   -webkit-transform: rotate(-15deg);
   transform: rotate(-15deg);
 }
+
+#departure {
+  height: 30px;
+  width: 90%; 
+  border-radius: 10px; 
+}
+
+#arrival {
+  height: 30px;
+  width: 90%; 
+  border-radius: 10px; 
+}
+
+#date {
+  height: 30px;
+  width: 90%;
+  border-radius: 10px; 
+}
+#register {
+  height: 40px;
+  width: 60%;
+  background-color: rgb(22, 244, 214);
+  border-radius: 20px; 
+}
+
