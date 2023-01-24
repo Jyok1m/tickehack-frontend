@@ -23,7 +23,7 @@ body {
   justify-content: center;
   text-align: center;
   color: aliceblue;
-  background-image: url(/tickehack-frontend/images/train\ USA.jpg);
+  background-image: url(../images/train\ USA.jpg);
   background-position: center center;
   background-size: cover;
   height: 100vh;

@@ -15,13 +15,12 @@ body {
 #bookingsButton {
   text-decoration: none;
 }
-
 #container-text {
   display: flex;
   flex-direction: column;
   text-align: center;
   color: aliceblue;
-  background-image: url(/tickehack-frontend/images/rail.jpg);
+  background-image: url(../images/rail.jpg);
   background-position: center center;
   background-size: cover;
   height: 100vh;
@@ -119,10 +118,8 @@ a {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
- 
+
 .rotate :hover img {
   -webkit-transform: rotate(-15deg);
   transform: rotate(-15deg);
 }
-
-
