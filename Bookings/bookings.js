@@ -30,14 +30,11 @@ fetch("http://localhost:3000/bookings")
           <div class="departureTime">${msToTime(departureDate)}</div>
           <div class="price">${price}€</div>
           <div class="timeRemaining">Departure in ${msToTime(timeRemaining)} hours</div>
+          <img src="../images/calendrier.png" height="50px" width="50px"/>
         </div>
         `;
       }
-      document.getElementById("selection").innerHTML += `
-      <div id="bookingsFooter">
-        <div class="bookingMessage">Enjoy your travels with Tickethack !</div>
-      </div>
-      `;
+   
     } else {
       return;
     }

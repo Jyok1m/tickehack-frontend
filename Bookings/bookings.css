@@ -82,6 +82,7 @@ body {
   margin: 100px;
   padding: 10px;
   color: black;
+  
 }
 
 h4 {
@@ -522,19 +523,24 @@ a{
     opacity: 0.6;
   }
 }
+
+#allBookings {
+  width: 75%;
+  
+}
 #bookingsFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 75%;
+  width: 50%;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 15px;
   background-color: antiquewhite;
-  font-size: small;
   color: black;
+  border-radius: 10px;
 }
 
 .booking {
@@ -544,10 +550,9 @@ a{
   width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 15px;
+  margin: auto;
   background-color: antiquewhite;
-  font-size: small;
   color: black;
+  border-radius: 10px;
 }
+
