@@ -1,5 +1,6 @@
 document.getElementById("register").addEventListener("click", () => {
   document.getElementById("result").innerHTML = ""; // removes the logo + text
+  // Determines the different values for the users' inputs
   const inputData = {
     departure: document.getElementById("departure").value,
     arrival: document.getElementById("arrival").value,
@@ -11,12 +12,17 @@ document.getElementById("register").addEventListener("click", () => {
     body: JSON.stringify(inputData),
   })
     .then((response) => response.json())
-    .then((availaibleTrains) => {
-      const trainList = availaibleTrains.trainList;
-      for (const trains of trainList) {
-        const { departure, arrival, date, price } = trains;
-        const departureTime = date.slice(11, 16);
-        document.getElementById("result").innerHTML += `
+    .then((availableTrains) => {
+      const result = availableTrains.result;
+      const trainList = availableTrains.trainList;
+      const errorMessage = availableTrains.error;
+      //Condition IF the result is True
+      if (result) {
+        for (const trains of trainList) {
+          const { departure, arrival, date, price } = trains;
+          const departureTime = date.slice(11, 16);
+          // Appends the new Divs with all the trips for the date + time
+          document.getElementById("result").innerHTML += `
         <div class="trainList">
           <div class="trip">${departure} > ${arrival}</div>
           <div class="departureTime">${departureTime}</div>
@@ -24,7 +30,14 @@ document.getElementById("register").addEventListener("click", () => {
           <button class="book-button">Book</button>
         </div>
         `;
-        console.log(departureTime);
+          console.log(departureTime);
+        }
+      } else {
+        // Appends the error message that resulted from the route
+        document.getElementById("result").innerHTML += `
+          <img src="../images/train.png" />
+          <h3>${errorMessage}</h3>
+        `;
       }
     });
 });
