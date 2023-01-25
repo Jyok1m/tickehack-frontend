@@ -6,13 +6,14 @@ document.getElementById("register").addEventListener("click", () => {
     arrival: document.getElementById("arrival").value,
     date: document.getElementById("date").value,
   };
-  fetch("http://localhost:3000/home/", {
+  fetch("http://localhost:3000/home", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(inputData),
   })
     .then((response) => response.json())
     .then((availableTrains) => {
+      console.log("availableTrains", availableTrains);
       const result = availableTrains.result;
       const trainList = availableTrains.trainList;
       const errorMessage = availableTrains.error;
@@ -31,17 +32,29 @@ document.getElementById("register").addEventListener("click", () => {
           </div>
           `;
         }
-        for (let i = 0; i < document.querySelectorAll(".book-button").length; i++) {
-          document.querySelectorAll(".book-button")[i].addEventListener("click", function () {
-            const id = this.id;
-            fetch(`http://localhost:3000/home/book/${id}`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-            })
-              .then((response) => response.json())
-              .then(() => alert("Trip sucessfully added to your cart !"));
-            window.location.assign("../Cart/cart.html");
-          });
+        for (
+          let i = 0;
+          i < document.querySelectorAll(".book-button").length;
+          i++
+        ) {
+          console.log(
+            'document.querySelectorAll(".book-button")',
+            document.querySelectorAll(".book-button")[i]
+          );
+          document
+            .querySelectorAll(".book-button")
+            [i].addEventListener("click", function () {
+              const id = this.id;
+              fetch(`http://localhost:3000/home/book/${id}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  window.location.assign("../Cart/cart.html");
+                })
+                .catch((error) => console.log(error));
+            });
         }
       } else {
         // Appends the error message that resulted from the route

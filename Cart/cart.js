@@ -24,7 +24,10 @@ fetch("http://localhost:3000/cart/")
       }
       document.getElementById("selection").innerHTML += `
       <div id="cartFooter">
-        <div class">Total: ${cartTotal}€</div>
+        <div class="total">Total: ${cartTotal}€</div>
+        <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
+        <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
+        <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
         <button id="purchaseButton">Purchase</button>
       </div>
       `;
