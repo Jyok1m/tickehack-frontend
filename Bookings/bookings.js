@@ -8,7 +8,7 @@ function msToTime(duration) {
   return hours + ":" + minutes;
 }
 
-fetch("http://localhost:3000/bookings")
+fetch("https://tickethack-backend-dusky.vercel.app/bookings")
   .then((response) => response.json())
   .then((data) => {
     const { result, allBookings } = data;
@@ -34,7 +34,6 @@ fetch("http://localhost:3000/bookings")
         </div>
         `;
       }
-   
     } else {
       return;
     }

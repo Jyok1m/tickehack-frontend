@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/cart/")
+fetch("https://tickethack-backend-dusky.vercel.app/cart/")
   .then((response) => response.json())
   .then((data) => {
     const { result, cartData } = data;
@@ -32,7 +32,7 @@ fetch("http://localhost:3000/cart/")
       </div>
       `;
       document.getElementById("purchaseButton").addEventListener("click", function () {
-        fetch("http://localhost:3000/cart/purchase", {
+        fetch("https://tickethack-backend-dusky.vercel.app/cart/purchase", {
           method: "POST",
         })
           .then((response) => response.json())
@@ -42,7 +42,7 @@ fetch("http://localhost:3000/cart/")
       for (let i = 0; i < document.querySelectorAll(".xButton").length; i++) {
         document.querySelectorAll(".xButton")[i].addEventListener("click", function () {
           const id = this.id;
-          fetch(`http://localhost:3000/cart/delete/${id}`, {
+          fetch(`https://tickethack-backend-dusky.vercel.app/cart/delete/${id}`, {
             method: "DELETE",
           })
             .then((response) => response.json())

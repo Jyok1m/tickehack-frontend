@@ -6,7 +6,7 @@ document.getElementById("register").addEventListener("click", () => {
     arrival: document.getElementById("arrival").value,
     date: document.getElementById("date").value,
   };
-  fetch("http://localhost:3000/home", {
+  fetch("https://tickethack-backend-dusky.vercel.app/home", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(inputData),
@@ -32,29 +32,23 @@ document.getElementById("register").addEventListener("click", () => {
           </div>
           `;
         }
-        for (
-          let i = 0;
-          i < document.querySelectorAll(".book-button").length;
-          i++
-        ) {
+        for (let i = 0; i < document.querySelectorAll(".book-button").length; i++) {
           console.log(
             'document.querySelectorAll(".book-button")',
             document.querySelectorAll(".book-button")[i]
           );
-          document
-            .querySelectorAll(".book-button")
-            [i].addEventListener("click", function () {
-              const id = this.id;
-              fetch(`http://localhost:3000/home/book/${id}`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
+          document.querySelectorAll(".book-button")[i].addEventListener("click", function () {
+            const id = this.id;
+            fetch(`https://tickethack-backend-dusky.vercel.app/home/book/${id}`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                window.location.assign("../Cart/cart.html");
               })
-                .then((response) => response.json())
-                .then((data) => {
-                  window.location.assign("../Cart/cart.html");
-                })
-                .catch((error) => console.log(error));
-            });
+              .catch((error) => console.log(error));
+          });
         }
       } else {
         // Appends the error message that resulted from the route
