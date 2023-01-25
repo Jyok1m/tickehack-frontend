@@ -2,7 +2,6 @@ fetch("http://localhost:3000/cart/")
   .then((response) => response.json())
   .then((data) => {
     const { result, cartData } = data;
-    console.log(data);
     if (result) {
       document.getElementById("selection").innerHTML = "";
       let cartTotal = 0;
@@ -28,7 +27,16 @@ fetch("http://localhost:3000/cart/")
         <div class">Total: ${cartTotal}€</div>
         <button id="purchaseButton">Purchase</button>
       </div>
-      `
+      `;
+      document.getElementById("purchaseButton").addEventListener("click", function () {
+        fetch("http://localhost:3000/cart/purchase", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then(() => alert("Trips successfully purchased !"));
+        window.location.assign("../Bookings/bookings.html");
+      });
       for (let i = 0; i < document.querySelectorAll(".xButton").length; i++) {
         document.querySelectorAll(".xButton")[i].addEventListener("click", function () {
           const id = this.id;
@@ -37,24 +45,12 @@ fetch("http://localhost:3000/cart/")
             headers: { "Content-Type": "application/json" },
           })
             .then((response) => response.json())
-            .then(() => {
-              alert("Trip sucessfully deleted !");
-            })
+            .then(() => alert("Trip sucessfully deleted !"))
             .then(() => window.location.reload());
+            
         });
       }
     } else {
       return;
     }
-  });
-
-  document.querySelectorAll(".book-button")[i].addEventListener("click", function () {
-    const id = this.id;
-    fetch(`http://localhost:3000/home/book/${id}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then(() => alert("Trip sucessfully added to your cart !"));
-    window.location.assign("../Bookings/booking.html");
   });
