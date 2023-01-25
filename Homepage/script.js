@@ -19,18 +19,29 @@ document.getElementById("register").addEventListener("click", () => {
       //Condition IF the result is True
       if (result) {
         for (const trains of trainList) {
-          const { departure, arrival, date, price } = trains;
+          const { departure, arrival, date, price, _id } = trains;
           const departureTime = date.slice(11, 16);
           // Appends the new Divs with all the trips for the date + time
           document.getElementById("result").innerHTML += `
-        <div class="trainList">
-          <div class="trip">${departure} > ${arrival}</div>
-          <div class="departureTime">${departureTime}</div>
-          <div class="price">${price}€</div>
-          <button class="book-button">Book</button>
-        </div>
-        `;
-          console.log(departureTime);
+          <div class="trainList">
+            <div class="trip">${departure} > ${arrival}</div>
+            <div class="departureTime">${departureTime}</div>
+            <div class="price">${price}€</div>
+            <button class="book-button" id=${_id}>Book</button>
+          </div>
+          `;
+        }
+        for (let i = 0; i < document.querySelectorAll(".book-button").length; i++) {
+          document.querySelectorAll(".book-button")[i].addEventListener("click", function () {
+            const id = this.id;
+            fetch(`http://localhost:3000/home/book/${id}`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+            })
+              .then((response) => response.json())
+              .then((data) => alert(data.result));
+            window.location.assign("../Cart/cart.html");
+          });
         }
       } else {
         // Appends the error message that resulted from the route
