@@ -39,7 +39,7 @@ document.getElementById("register").addEventListener("click", () => {
               headers: { "Content-Type": "application/json" },
             })
               .then((response) => response.json())
-              .then((data) => alert(data.result));
+              .then(() => alert("Trip sucessfully added to your cart !"));
             window.location.assign("../Cart/cart.html");
           });
         }
