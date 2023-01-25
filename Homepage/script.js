@@ -53,6 +53,7 @@ document.getElementById("register").addEventListener("click", () => {
                 .then((data) => {
                   window.location.assign("../Cart/cart.html");
                 })
+                .catch((error) => console.log(error));
             });
         }
       } else {

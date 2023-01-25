@@ -2,7 +2,6 @@ fetch("http://localhost:3000/cart/")
   .then((response) => response.json())
   .then((data) => {
     const { result, cartData } = data;
-    console.log(data);
     if (result) {
       document.getElementById("selection").innerHTML = "";
       let cartTotal = 0;
@@ -31,27 +30,30 @@ fetch("http://localhost:3000/cart/")
         <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
         <button id="purchaseButton">Purchase</button>
       </div>
-      </div>
       `;
+      document.getElementById("purchaseButton").addEventListener("click", function () {
+        fetch("http://localhost:3000/cart/purchase", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then(() => alert("Trips successfully purchased !"));
+        window.location.assign("../Bookings/bookings.html");
+      });
       for (let i = 0; i < document.querySelectorAll(".xButton").length; i++) {
-        document
-          .querySelectorAll(".xButton")
-          [i].addEventListener("click", function () {
-            const id = this.id;
-            fetch(`http://localhost:3000/cart/delete/${id}`, {
-              method: "DELETE",
-              headers: { "Content-Type": "application/json" },
-            })
-              .then((response) => response.json())
-              .then(() => {
-                alert("Trip sucessfully deleted !");
-              })
-              .then(() => window.location.reload());
-          });
+        document.querySelectorAll(".xButton")[i].addEventListener("click", function () {
+          const id = this.id;
+          fetch(`http://localhost:3000/cart/delete/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          })
+            .then((response) => response.json())
+            .then(() => alert("Trip sucessfully deleted !"))
+            .then(() => window.location.reload());
+            
+        });
       }
     } else {
       return;
     }
   });
-
-
