@@ -153,14 +153,14 @@ a {
 }
 
 #logoFb {
-  width: 25px;
+  width: 50px;
 }
 
 #logoTwitter {
-  width: 25px;
+  width: 50px;
 }
 #logoInstagram {
-  width: 25px;
+  width: 50px;
 }
 
 .rotate img {
@@ -193,4 +193,8 @@ a {
   width: 20%;
   background-color: rgb(22, 244, 214);
   border-radius: 11px;
+}
+
+a{
+  text-decoration: none;
 }

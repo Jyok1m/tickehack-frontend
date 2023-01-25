@@ -25,36 +25,33 @@ fetch("http://localhost:3000/cart/")
       }
       document.getElementById("selection").innerHTML += `
       <div id="cartFooter">
-        <div class">Total: ${cartTotal}€</div>
+        <div class="total">Total: ${cartTotal}€</div>
+        <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
+        <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
+        <img src="../images/avance-rapide transparent.gif" height="50px" width="50px"/>
         <button id="purchaseButton">Purchase</button>
       </div>
-      `
+      </div>
+      `;
       for (let i = 0; i < document.querySelectorAll(".xButton").length; i++) {
-        document.querySelectorAll(".xButton")[i].addEventListener("click", function () {
-          const id = this.id;
-          fetch(`http://localhost:3000/cart/delete/${id}`, {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-          })
-            .then((response) => response.json())
-            .then(() => {
-              alert("Trip sucessfully deleted !");
+        document
+          .querySelectorAll(".xButton")
+          [i].addEventListener("click", function () {
+            const id = this.id;
+            fetch(`http://localhost:3000/cart/delete/${id}`, {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
             })
-            .then(() => window.location.reload());
-        });
+              .then((response) => response.json())
+              .then(() => {
+                alert("Trip sucessfully deleted !");
+              })
+              .then(() => window.location.reload());
+          });
       }
     } else {
       return;
     }
   });
 
-  document.querySelectorAll(".book-button")[i].addEventListener("click", function () {
-    const id = this.id;
-    fetch(`http://localhost:3000/home/book/${id}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then(() => alert("Trip sucessfully added to your cart !"));
-    window.location.assign("../Bookings/booking.html");
-  });
+
