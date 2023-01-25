@@ -47,3 +47,14 @@ fetch("http://localhost:3000/cart/")
       return;
     }
   });
+
+  document.querySelectorAll(".book-button")[i].addEventListener("click", function () {
+    const id = this.id;
+    fetch(`http://localhost:3000/home/book/${id}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then(() => alert("Trip sucessfully added to your cart !"));
+    window.location.assign("../Bookings/booking.html");
+  });
