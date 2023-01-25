@@ -34,7 +34,6 @@ fetch("http://localhost:3000/cart/")
       document.getElementById("purchaseButton").addEventListener("click", function () {
         fetch("http://localhost:3000/cart/purchase", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
         })
           .then((response) => response.json())
           .then(() => alert("Trips successfully purchased !"));
@@ -45,12 +44,10 @@ fetch("http://localhost:3000/cart/")
           const id = this.id;
           fetch(`http://localhost:3000/cart/delete/${id}`, {
             method: "DELETE",
-            headers: { "Content-Type": "application/json" },
           })
             .then((response) => response.json())
             .then(() => alert("Trip sucessfully deleted !"))
             .then(() => window.location.reload());
-            
         });
       }
     } else {
