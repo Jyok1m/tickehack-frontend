@@ -8,22 +8,33 @@ body {
 }
 #homeButton {
   text-decoration: none;
+  color: black;
 }
 #cartButton {
   text-decoration: none;
+  color: black;
 }
 #bookingsButton {
   text-decoration: none;
+  color: black;
+}
+
+
+#container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: aliceblue;
+  background-image: url();
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
 }
 
 #container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-image: url(../images/train\ background.jpg);
-  background-position: center center;
-  background-size: cover;
-  height: 100vh;
 }
 
 #header {
@@ -45,7 +56,6 @@ body {
   grid-row-end: 5;
   grid-column-start: 1;
   grid-column-end: 5;
-  text-align: center;
   display: flex;
   justify-content: center;
 }
@@ -56,34 +66,39 @@ body {
   width: 200px;
 }
 
-h2 {
-  color: rgb(39, 231, 145);
+#title {
+
   font-weight: bolder;
 }
+
 
 #selection {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
-  width: 300px;
-  height: 500px;
+  border-radius: 10px;
+  width: 1200px;
   background-color: aliceblue;
   margin: 100px;
+ padding: 10px;
+}
+
+h4 {
+  color: black;
 }
 
 #result {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid black;
+  background-color: aliceblue;
   width: 300px;
   height: 500px;
-  background-color: aliceblue;
   margin: 100px;
+  border-radius: 10px;
+  padding-top: 10px;
+  color: black;
+  justify-content: space-around;
 }
+
 #bottom {
   position: absolute;
   bottom: 50px;
@@ -109,12 +124,13 @@ a {
 #logoInstagram {
   width: 25px;
 }
+
 .rotate img {
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-  }
-   
-  .rotate :hover img {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
-  }
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+ 
+.rotate :hover img {
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
