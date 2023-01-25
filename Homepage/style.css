@@ -116,6 +116,29 @@ body {
   border: none;
   font-family: "Varela Round", sans-serif;
 }
+#register {
+  padding: 10px;
+  background-color: rgb(22, 244, 214);
+  border-radius: 11px;
+  border: none;
+}
+#register:hover {
+  animation: pulsation_bouton 1s ease-out;
+}
+
+@keyframes pulsation_bouton {
+  from {
+    box-shadow: 0 0 0 -3px #0000, 0 0 0 0  rgb(22, 244, 214);
+  }
+  to {
+    box-shadow: 0 0 0 10px #0000, 0 0 0 15px #0000;
+  }
+}
+
+.total {
+  margin-left: 20px;
+}
+
 
 #result {
   background-color: aliceblue;
