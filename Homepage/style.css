@@ -5,15 +5,19 @@
 body {
   margin: 0;
   font-family: "Varela Round", sans-serif;
+  
 }
 #homeButton {
   text-decoration: none;
+  color: black;
 }
 #cartButton {
   text-decoration: none;
+  color: black;
 }
 #bookingsButton {
   text-decoration: none;
+  color: black;
 }
 #container-text {
   display: flex;
@@ -30,6 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  ;
 }
 
 #header {
@@ -82,11 +87,17 @@ body {
   width: 300px;
   height: 400px;
   margin: 100px;
-  border-radius: 10px;
+  border-radius: 10px;;
   padding-top: 10px;
   color: black;
   justify-content: space-around;
   overflow: auto;
+}
+#line {
+  background-color: aquamarine;
+  height: 2px;
+  width: 90%;
+  margin: auto;
 }
 
 #bottom {
