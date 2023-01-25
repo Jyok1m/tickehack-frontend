@@ -80,6 +80,41 @@ body {
   height: 400px;
   background-color: aliceblue;
   margin: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#departure {
+  height: 35px;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  font-family: "Varela Round", sans-serif;
+}
+
+#arrival {
+  height: 35px;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  font-family: "Varela Round", sans-serif;
+  margin: 5px;
+}
+
+#date {
+  height: 35px;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  font-family: "Varela Round", sans-serif;
+}
+#register {
+  height: 40px;
+  width: 60%;
+  background-color: rgb(22, 244, 214);
+  border-radius: 20px;
+  border: none;
+  font-family: "Varela Round", sans-serif;
 }
 
 #result {
@@ -92,6 +127,8 @@ body {
   color: black;
   justify-content: space-around;
   overflow: auto;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 #line {
   background-color: aquamarine;
@@ -136,29 +173,7 @@ a {
   transform: rotate(-15deg);
 }
 
-#departure {
-  height: 30px;
-  width: 90%;
-  border-radius: 10px;
-}
 
-#arrival {
-  height: 30px;
-  width: 90%;
-  border-radius: 10px;
-}
-
-#date {
-  height: 30px;
-  width: 90%;
-  border-radius: 10px;
-}
-#register {
-  height: 40px;
-  width: 60%;
-  background-color: rgb(22, 244, 214);
-  border-radius: 20px;
-}
 
 .trainList {
   display: flex;

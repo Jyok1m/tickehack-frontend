@@ -20,20 +20,25 @@ body {
 }
 
 
-#container-text {
+#container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   color: aliceblue;
-  background-color: aliceblue;
+  background-color: rgb(88, 162, 226);
   
   height: 100vh;
 }
 
-#container {
-  display: flex;
+#middle{
+
   justify-content: center;
+  align-items: center;
+}
+#container-text {
+position: absolute;
+bottom: 100px;
 }
 
 #header {
@@ -42,7 +47,7 @@ body {
   grid-column-start: 1;
   grid-column-end: 5;
   width: 100vw;
-  height: 25%;
+  height: 10%;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -79,8 +84,7 @@ body {
   border-radius: 10px;
   width: 1200px;
   background-color: aliceblue;
-  margin: 100px;
-  padding: 100px;
+  margin: 200px;
 }
 
 h4 {
