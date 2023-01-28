@@ -5,6 +5,7 @@ document.getElementById("register").addEventListener("click", () => {
     departure: document.getElementById("departure").value,
     arrival: document.getElementById("arrival").value,
     date: document.getElementById("date").value,
+    time: document.getElementById("time").vlue,
   };
   fetch("https://tickethack-backend-dusky.vercel.app/home", {
     method: "POST",
