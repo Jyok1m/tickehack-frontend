@@ -12,16 +12,17 @@
 }
 
 .responseCard img {
-  width: 40%;
+  height: 50%;
 }
 
 .line {
   background-color: black;
   width: 90%;
-  height: 1px;
+  height: 3px;
 }
 
 .responseCard p {
   font-size: 20px;
   font-family: "Varela Round", sans-serif;
+  text-align: center;
 }
