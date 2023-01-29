@@ -1,0 +1,26 @@
+.titleCard {
+  background-color: white;
+  width: 90vw;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleCard h1, .titleCard p {
+  margin: 10px;
+  font-family: "Varela Round", sans-serif;
+}
+
+.titleCard h1 {
+  font-size: 20px;
+}
+
+.titleCard p {
+  font-style: italic;
+}
